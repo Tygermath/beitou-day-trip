@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北投文化綠意一日遊</title>
+<style>
+:root{
+  --primary:#1b4d3e; --primary-light:#2d7a58; --primary-soft:#eaf3ee;
+  --accent:#b45309; --accent-soft:#fef3c7;
+  --driver:#1e3a8a; --driver-soft:#eff6ff;
+  --story:#6d28d9; --story-soft:#f5f3ff; --act:#047857; --act-soft:#ecfdf5;
+  --bg:#f6f8f7; --card:#fff; --text:#1e293b; --muted:#64748b; --line:#e2e8f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-bottom:70px}
+a{color:inherit}
+header{background:linear-gradient(135deg,#133a2e,#1b4d3e 60%,#2d7a58);color:#fff;padding:2.2rem 1rem 2.4rem;text-align:center}
+header h1{font-size:1.9rem;letter-spacing:.05em}
+header p{opacity:.9;margin:.3rem auto .9rem;max-width:720px}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem}
+.chip{background:rgba(255,255,255,.18);padding:.2rem .8rem;border-radius:999px;font-size:.9rem}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;gap:.5rem;padding:.6rem 1rem;overflow-x:auto;justify-content:safe center}
+nav a{flex:none;background:#f1f5f9;text-decoration:none;font-weight:600;font-size:.9rem;padding:.45rem .9rem;border-radius:8px;white-space:nowrap}
+nav a:hover{background:var(--primary-soft);color:var(--primary)}
+nav a.drv{background:var(--driver-soft);color:var(--driver);border:1px solid #bfdbfe}
+main{max-width:1000px;margin:1.4rem auto 0;padding:0 16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 6px rgba(0,0,0,.06);padding:1.6rem 1.4rem;margin-bottom:1.8rem;scroll-margin-top:64px}
+h2{font-size:1.4rem;color:var(--primary);border-bottom:2px solid var(--line);padding-bottom:.6rem;margin-bottom:.8rem}
+.desc{color:var(--muted);font-size:.93rem;margin-bottom:1.1rem}
+.notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:.8rem 1rem;font-size:.92rem;margin-bottom:1.2rem}
+.notice li{margin-left:1.2rem}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th{background:#f8fafc;text-align:left;padding:.7rem .8rem;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.move td{background:#fafbfc;color:var(--muted);font-size:.86rem;padding:.35rem .8rem}
+.t{background:var(--accent-soft);color:#92400e;font-weight:700;font-size:.86rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;display:inline-block}
+.stay{background:#f1f5f9;color:var(--muted);font-size:.8rem;padding:.12rem .45rem;border-radius:4px;white-space:nowrap}
+.place a{font-weight:700;color:var(--primary);text-decoration:none}
+.place a:hover{text-decoration:underline}
+
+.spot{border:1px solid var(--line);border-radius:12px;padding:1.2rem;margin-bottom:1.4rem;scroll-margin-top:64px}
+.spot-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.4rem;margin-bottom:.3rem}
+.spot h3{font-size:1.25rem;color:var(--primary)}
+.meta{font-size:.86rem;color:var(--muted)}
+.tagline{font-size:.95rem;margin-bottom:.8rem}
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-bottom:1rem}
+@media(max-width:560px){.photos{grid-template-columns:1fr}}
+figure{position:relative;border-radius:10px;overflow:hidden;background:#e2e8f0;border:1px solid var(--line)}
+figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+figure .role{position:absolute;top:8px;left:8px;font-size:.78rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;color:#fff;background:#b45309}
+figure .role.hl{background:#6d28d9}
+figcaption{font-size:.84rem;padding:.45rem .6rem;background:#fff}
+figcaption small{display:block;color:var(--muted);font-size:.72rem}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem}
+.box{border-radius:8px;padding:.85rem .9rem;border-left:4px solid var(--primary-light);background:#f7fbf9}
+.box.story{border-left-color:var(--story);background:var(--story-soft)}
+.box.act{border-left-color:var(--act);background:var(--act-soft)}
+.box h4{font-size:.95rem;margin-bottom:.35rem;color:var(--primary-light)}
+.box.story h4{color:var(--story)} .box.act h4{color:var(--act)}
+.box ul{padding-left:1.15rem;font-size:.92rem}
+.box li{margin-bottom:.3rem}
+.tip{margin-top:.8rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:.6rem .9rem;font-size:.9rem}
+
+.tabs{display:flex;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap}
+.tabs button{flex:1 1 200px;padding:.7rem .8rem;border:2px solid var(--primary);background:#fff;color:var(--primary);font:inherit;font-weight:700;border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--primary);color:#fff}
+.opt{display:none}.opt.on{display:block}
+.banner{background:var(--primary-soft);border-radius:10px;padding:1rem;margin-bottom:1rem}
+.banner h3{color:var(--primary);font-size:1.15rem}
+.banner p{font-size:.9rem;color:#334155}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem}
+.cat{border:1px solid var(--line);border-radius:10px;padding:1rem}
+.cat h4{color:var(--primary);border-bottom:1px dashed var(--line);padding-bottom:.4rem;margin-bottom:.5rem}
+.dish{display:flex;justify-content:space-between;gap:.8rem;padding:.4rem 0;border-bottom:1px solid #f1f5f9;font-size:.93rem}
+.dish:last-child{border-bottom:none}
+.dish small{display:block;color:var(--muted);font-size:.8rem}
+.price{font-weight:700;color:var(--accent);white-space:nowrap}
+.hot{background:#fee2e2;color:#b91c1c;font-size:.72rem;font-weight:700;padding:.05rem .35rem;border-radius:4px;margin-left:.3rem;white-space:nowrap}
+.src{font-size:.82rem;color:var(--muted);margin-top:.8rem}
+
+#driver{border-left:5px solid var(--driver)}
+#driver h2{color:var(--driver)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-bottom:1.1rem}
+.stat{background:var(--driver-soft);border:1px solid #dbeafe;border-radius:8px;padding:.8rem}
+.stat b{display:block;color:var(--driver);font-size:1.08rem}
+.stat span{font-size:.78rem;color:#475569;font-weight:600}
+.stat small{color:var(--muted);font-size:.82rem}
+.btn{display:inline-block;background:var(--driver);color:#fff;text-decoration:none;padding:.4rem .8rem;border-radius:6px;font-size:.84rem;font-weight:600;margin:.4rem .4rem 0 0;border:none;cursor:pointer;font-family:inherit}
+.btn.alt{background:#fff;color:var(--driver);border:1px solid var(--driver)}
+h3.sub{color:var(--driver);font-size:1.08rem;margin:1.4rem 0 .6rem}
+.leg{border:1px solid var(--line);border-radius:10px;padding:1rem;margin-bottom:1rem;background:#f8fafc;break-inside:avoid}
+.leg-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.5rem}
+.leg-head b{color:var(--driver)}
+.leg-time{background:#dbeafe;color:#1e40af;font-size:.84rem;font-weight:700;padding:.15rem .6rem;border-radius:6px}
+.leg ol{padding-left:1.3rem;font-size:.92rem}
+.park{background:#fff;border:1px dashed #cbd5e1;border-radius:8px;padding:.6rem .8rem;margin-top:.6rem;font-size:.89rem}
+.walk{color:var(--muted);font-size:.9rem;padding:.5rem .9rem;border-left:3px dotted #cbd5e1;margin:0 0 1rem .6rem}
+.fab{position:fixed;right:16px;bottom:16px;background:var(--driver);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:.65rem 1.1rem;border-radius:50px;border:2px solid #fff;box-shadow:0 8px 16px rgba(0,0,0,.2);z-index:30}
+footer{text-align:center;color:var(--muted);font-size:.84rem;padding:1.5rem 1rem}
+@media(max-width:640px){header h1{font-size:1.5rem}section{padding:1.1rem .9rem}.spot{padding:.9rem}}
+.opt-label{display:none}
+/* Print / PDF = linear document: nothing hidden behind a tab, every node laid out in reading order. */
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html{font-size:13px}
+  body{background:#fff;padding:0}
+  nav,.fab,.tabs,#print-driver{display:none!important}
+  main{max-width:none;margin:0;padding:0}
+  header{padding:1.4rem 1rem;border-radius:10px;margin-bottom:1rem}
+  section{box-shadow:none;border:none;padding:0;margin-bottom:0}
+  section+section{break-before:page}
+  .opt{display:block!important}
+  .opt+.opt{break-before:page}
+  .opt-label{display:block;font-weight:700;color:var(--primary);font-size:1.1rem;margin:.2rem 0 .5rem}
+  .tw{overflow:visible}
+  .spot{break-before:page;border:none;padding:0}
+  #spots-body .spot:first-of-type{break-before:auto}
+  figure,.box,.cat,.leg,.dish,.tip,.park,.notice,.banner,tr{break-inside:avoid}
+  h2,h3,h4{break-after:avoid}
+  .photos{grid-template-columns:repeat(3,1fr);gap:.5rem}
+  figure img{aspect-ratio:4/3}
+  figcaption{font-size:.78rem;padding:.3rem .45rem}
+  td{padding:.4rem .6rem} tr.move td{padding:.2rem .6rem}
+  .notice{padding:.5rem .8rem;margin-bottom:.7rem}
+  .dish{padding:.25rem 0} .cat{padding:.7rem} .menu{gap:.6rem}
+  .leg{padding:.7rem;margin-bottom:.6rem} .walk{margin-bottom:.5rem;padding:.25rem .9rem}
+  .boxes{gap:.5rem} .box{padding:.6rem .7rem}
+  footer{padding:.6rem 0 0}
+  body.print-driver header,body.print-driver footer,body.print-driver section:not(#driver){display:none!important}
+}
+</style>
+</head>
+<body>
+<header><h1 id="h-title"></h1><p id="h-tag"></p><div class="chips" id="h-chips"></div></header>
+<nav>
+  <a href="#flow">⏱️ 1. 粗流</a>
+  <a href="#spots">🏛️ 2. 景點看點</a>
+  <a href="#meals">🍜 3. 用餐菜單</a>
+  <a href="#driver" class="drv">🚐 4. 司機專用</a>
+</nav>
+<main>
+  <section id="flow"><h2>⏱️ 1. 行程粗流（時間・地點）</h2><div id="flow-body"></div></section>
+  <section id="spots"><h2>🏛️ 2. 各景點：認得出來・看什麼・故事・做什麼</h2><div id="spots-body"></div></section>
+  <section id="meals"><h2>🍜 3. 用餐菜單（先想好吃什麼）</h2><div id="meals-body"></div></section>
+  <section id="driver"><h2>🚐 4. 司機專用：時刻表與點到點路線</h2><div id="driver-body"></div></section>
+</main>
+<a class="fab" href="#driver">🚐 司機路線</a>
+<footer id="foot"></footer>
+
+<script>
+const TRIP = /*__TRIP_JSON__*/{
+ "title": "北投文化綠意一日遊",
+ "tagline": "上午走進丹鳳山找百年石窟，中午吃素，下午沿北投公園散步、野餐，最後上地熱谷。",
+ "updated": "2026-11-13",
+ "chips": [
+  "📍 板橋文化路郵局 ⇄ 北投",
+  "🕒 09:00 – 17:15",
+  "🥬 午餐素食二選一",
+  "🧺 15:00 公園外帶野餐"
+ ],
+ "notices": [
+  "**週一不要排這個行程**：新北投車站、梅庭、溫泉博物館、地熱谷週一都休館。",
+  "午餐方案 B（安國寺滴水坊）**週一、週二公休**，不接受訂位、座位約 40 席，假日常要排隊；人多或趕時間請選方案 A。",
+  "弘法大師岩要走一段山路石階（來回約 40 分鐘），請穿好走的鞋、帶水；登山口沒有明顯指標。",
+  "地熱谷 17:00 關門，下午行程不要拖太晚。",
+  "**野餐的外帶店**：凱撒披薩週一公休，且 14:30–17:30 休息，須在 14:20 前取餐；兩家店在不同方向，司機要單獨開車約 75 分鐘（13:40–14:55）。披薩到野餐時已出爐約 1 小時。"
+ ],
+ "driver_notes": [
+  "12:50–16:30 車子停在七星公園地下停車場，只有 **13:40–14:55 司機外出採買**（見「外帶採買路線」）；乘客自己步行逛五個景點加野餐。",
+  "七星公園地下停車場為地下室，**中型巴士以上請先確認限高**；進不去就改停新北投站周邊路邊格或其他公有停車場。",
+  "銀光巷很窄，請在溫泉路的銀光巷口讓乘客下車，不要開進巷子。"
+ ],
+ "stops": [
+  {
+   "id": "start",
+   "kind": "start",
+   "emoji": "🚩",
+   "name": "板橋文化路郵局",
+   "depart": "09:00",
+   "address": "新北市板橋區文化路一段（捷運新埔站 1 號出口旁）",
+   "map": "板橋文化路郵局",
+   "summary": "郵局前集合上車，請提早 10 分鐘到。"
+  },
+  {
+   "id": "hongfa",
+   "kind": "spot",
+   "emoji": "🌲",
+   "name": "弘法大師岩（北投真言宗石窟建築群）",
+   "arrive": "09:45",
+   "depart": "11:15",
+   "address": "臺北市北投區丹鳳山（銀光巷登山口上山）",
+   "map": "弘法大師岩 北投",
+   "hours": "全天開放（戶外山徑）",
+   "fee": "免費",
+   "summary": "藏在丹鳳山樹林裡的日本時代石窟佛龕，2019 年才列為市定古蹟，還能遠眺觀音山。",
+   "driver": "溫泉路「銀光巷口」下客（巷窄勿進）。乘客上山約 90 分鐘，車可先到午餐點附近停車，11:10 回巷口接人。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "北投弘法大師岩1.jpg",
+     "caption": "**弘法大師岩**：整塊巨岩上開了一個方形木格門佛龕，前面有石燈籠——看到就到了。",
+     "credit": "弟魯 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/%E5%8C%97%E6%8A%95%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A91.jpg/960px-%E5%8C%97%E6%8A%95%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A91.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A91.jpg"
+    },
+    {
+     "role": "landmark",
+     "file": "北投真言宗石窟建築群.jpg",
+     "caption": "**參道石階**：樹林裡兩側立著石柱的老石階，沿這段往上走就是石窟。",
+     "credit": "張雅倫 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/%E5%8C%97%E6%8A%95%E7%9C%9F%E8%A8%80%E5%AE%97%E7%9F%B3%E7%AA%9F%E5%BB%BA%E7%AF%89%E7%BE%A4.jpg/960px-%E5%8C%97%E6%8A%95%E7%9C%9F%E8%A8%80%E5%AE%97%E7%9F%B3%E7%AA%9F%E5%BB%BA%E7%AF%89%E7%BE%A4.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E7%9C%9F%E8%A8%80%E5%AE%97%E7%9F%B3%E7%AA%9F%E5%BB%BA%E7%AF%89%E7%BE%A4.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "北投波切不動明王岩.jpg",
+     "caption": "**波切不動明王石窟**：在大師岩後方，同樣鑿在天然巨石上，別漏看。",
+     "credit": "弟魯 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/%E5%8C%97%E6%8A%95%E6%B3%A2%E5%88%87%E4%B8%8D%E5%8B%95%E6%98%8E%E7%8E%8B%E5%B2%A9.jpg/960px-%E5%8C%97%E6%8A%95%E6%B3%A2%E5%88%87%E4%B8%8D%E5%8B%95%E6%98%8E%E7%8E%8B%E5%B2%A9.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E6%B3%A2%E5%88%87%E4%B8%8D%E5%8B%95%E6%98%8E%E7%8E%8B%E5%B2%A9.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "於弘法大師岩遠眺觀音山FUJI2329.jpg",
+     "caption": "**展望**：從大師岩一帶望向觀音山與關渡平原（照片為黃昏）。",
+     "credit": "Taiwankengo / CC BY-SA 3.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/%E6%96%BC%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A9%E9%81%A0%E7%9C%BA%E8%A7%80%E9%9F%B3%E5%B1%B1FUJI2329.jpg/960px-%E6%96%BC%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A9%E9%81%A0%E7%9C%BA%E8%A7%80%E9%9F%B3%E5%B1%B1FUJI2329.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E6%96%BC%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E5%B2%A9%E9%81%A0%E7%9C%BA%E8%A7%80%E9%9F%B3%E5%B1%B1FUJI2329.jpg"
+    }
+   ],
+   "focus": [
+    "**弘法大師岩**：把天然巨岩鑿出方形龕室、裝上木格門，裡面供奉日本真言宗祖師弘法大師（空海）。",
+    "**波切不動明王石窟**：位在大師岩後方、稍晚增建，同樣依巨石開鑿。",
+    "**弘法大師紀念碑**：碑上刻著一首和歌，大意是「遠處可望故里花木，大師之山光輝閃耀」。",
+    "**臺灣幸福石**：石窟群入口附近的小石碑，刻著日文「台湾よ、永に幸なれ」（臺灣啊，要永遠幸福）。",
+    "**參道遺跡**：老石階、石燈籠殘跡、捐款芳名碑，都是一百多年前留下來的。"
+   ],
+   "story": [
+    "約 **1911 年**（另有 1910、1912 年之說），在北投的日本人澤德松等人組成「茶榮講」，花了三百多圓在丹鳳山的巨岩上鑿龕供奉弘法大師，之後又在旁邊增建不動明王石窟。",
+    "「波切不動明王」的名字來自傳說：空海從唐朝搭船回日本時遇到暴風浪，祈請不動明王揮劍「斬開波浪」才平安歸國，後來被視為渡海平安的守護神。",
+    "**2004 年**，北投文史工作者楊燁在附近重新發現「臺灣幸福石」，分享到網路後爆紅；但碑文文法有誤，至今不確定是誰刻的。",
+    "2017 年紀念碑與幸福石接連遭人敲鑿破壞，文史界呼籲保護，**2019 年 7 月 24 日**石窟群終於指定為臺北市定古蹟。"
+   ],
+   "activities": [
+    "從銀光巷登山口走石階上山，單程約 15–20 分鐘，沿途是相思樹林與砂岩巨石。",
+    "玩「找石頭」：依序找到幸福石、紀念碑上的和歌、石燈籠殘跡、芳名碑。",
+    "在大師岩前合照，再到展望點看觀音山、關渡平原與北投市街。",
+    "體力好的人可以續走幾分鐘到丹鳳山稜線的大岩石上看風景（注意時間）。"
+   ],
+   "tip": "這裡是古蹟：請勿拓印、焚燒紙錢、綁布條或攀爬佛龕。登山口在**銀光巷 25 號再往上、第四個彎道的石板橋**，沒有指標，請開手機步行導航。"
+  },
+  {
+   "id": "lunch",
+   "kind": "meal",
+   "emoji": "🍜",
+   "name": "午餐（素食二選一）",
+   "arrive": "11:30",
+   "depart": "12:40",
+   "address": "A：光明路 61 號｜B：復興三路 101 巷 10 號",
+   "map": "妙觀音素食 北投光明店",
+   "summary": "出發前請先決定 A 或 B，並在車上想好要點什麼，到了直接點餐。",
+   "driver": "A：店門口臨停下客，車停附近路邊收費格或公有停車場。B：安國寺前有免費停車位（法會日可能客滿）。",
+   "options": [
+    {
+     "label": "🟢 方案 A：妙觀音素食（北投光明店）",
+     "name": "妙觀音素食 北投光明店",
+     "address": "臺北市北投區光明路 61 號",
+     "map": "妙觀音素食 北投光明店",
+     "hours": "約 10:30 – 21:00（以店家公告為準）",
+     "diet": "素食連鎖店，麵、拌飯、水餃為主",
+     "note": "在北投市區平地，出餐快，適合人多或想把時間留給下午的團。這家店找不到可自由使用的照片，請點上面的「地圖／店家照片」看店面與餐點實拍。",
+     "source": "Uber Eats「妙觀音素食 北投光明店」頁面（2026-11-13 查詢）",
+     "source_url": "https://www.ubereats.com/tw/store/%E5%A6%99%E8%A7%80%E9%9F%B3%E7%B4%A0%E9%A3%9F-%E5%8C%97%E6%8A%95%E5%85%89%E6%98%8E%E5%BA%97/VfAG6O6gWXO8sd-7iBzsww",
+     "source_note": "以下是外送平台價格，內用通常比較便宜，實際品項與價格以店內菜單為準。",
+     "menu": [
+      {
+       "category": "🍜 麵食",
+       "items": [
+        {
+         "name": "招牌紅燒麵",
+         "price": 180,
+         "tag": "人氣第 3"
+        },
+        {
+         "name": "當歸麵",
+         "price": 180,
+         "desc": "藥膳湯頭"
+        },
+        {
+         "name": "麻辣臭豆腐麵",
+         "price": 170
+        },
+        {
+         "name": "餛飩麵",
+         "price": 170
+        },
+        {
+         "name": "乾意麵",
+         "price": 110,
+         "desc": "最便宜的主食"
+        },
+        {
+         "name": "麻辣燙王子麵",
+         "price": 220
+        },
+        {
+         "name": "麻醬麵套餐／乾麵套餐",
+         "price": 257,
+         "desc": "套餐組合"
+        }
+       ]
+      },
+      {
+       "category": "🍚 拌飯・盒餐",
+       "items": [
+        {
+         "name": "滷燥蔬菜拌飯",
+         "price": 160,
+         "tag": "人氣第 2"
+        },
+        {
+         "name": "黑米蔬菜健康盒餐",
+         "price": 170,
+         "tag": "評價最多"
+        },
+        {
+         "name": "麻婆豆腐拌飯",
+         "price": 160
+        },
+        {
+         "name": "麻辣臭豆腐拌飯",
+         "price": 190
+        },
+        {
+         "name": "醬香梅乾拌飯",
+         "price": 190
+        },
+        {
+         "name": "泡椒酸菜魚拌飯",
+         "price": 190,
+         "desc": "素魚"
+        },
+        {
+         "name": "三杯猴菇蔬菜拌飯",
+         "price": 260
+        }
+       ]
+      },
+      {
+       "category": "🥟 水餃・小菜",
+       "items": [
+        {
+         "name": "手工高麗菜水餃",
+         "price": 110,
+         "tag": "人氣第 1"
+        },
+        {
+         "name": "麻辣臭豆腐",
+         "price": 160
+        },
+        {
+         "name": "三杯炒猴頭菇",
+         "price": 120
+        }
+       ]
+      }
+     ],
+     "suggest": "**不吃辣**：滷燥蔬菜拌飯或黑米蔬菜盒餐。**想喝湯**：當歸麵或招牌紅燒麵。**兩三人分食**：各點一份主食，再加一盤高麗菜水餃。平台上另有「喝好湯」「找小菜」分類，到店可再看。"
+    },
+    {
+     "label": "🔵 方案 B：佛光山安國寺 滴水坊",
+     "name": "佛光山安國寺 滴水坊（滴水書坊）",
+     "address": "臺北市北投區復興三路 101 巷 10 號",
+     "map": "佛光山安國寺 北投",
+     "hours": "週三–週日 11:00 – 17:40（週一、二公休）",
+     "phone": "02-2896-4558",
+     "diet": "全素／奶素，自助式服務、無服務費、只收現金",
+     "note": "在山腰的寺院裡，窗外一片綠、可俯瞰臺北盆地，庭院有很多小沙彌石像。**不接受訂位**、座位約 40 席，假日中午可能要等一小時。",
+     "photos": [
+      {
+       "role": "landmark",
+       "file": "Garden of a Foguangshan Temple.jpg",
+       "caption": "**安國寺庭院**：到處是不同動作的小沙彌石像，看到就是到了。",
+       "credit": "Allervous / CC BY-SA 4.0",
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Garden_of_a_Foguangshan_Temple.jpg/960px-Garden_of_a_Foguangshan_Temple.jpg",
+       "page": "https://commons.wikimedia.org/wiki/File:Garden_of_a_Foguangshan_Temple.jpg"
+      },
+      {
+       "role": "highlight",
+       "file": "Interior of Anguo Temple, Foguangshan.jpg",
+       "caption": "**安國寺殿內**：用餐前後可以進殿參觀。",
+       "credit": "Allervous / CC BY-SA 4.0",
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Interior_of_Anguo_Temple%2C_Foguangshan.jpg/960px-Interior_of_Anguo_Temple%2C_Foguangshan.jpg",
+       "page": "https://commons.wikimedia.org/wiki/File:Interior_of_Anguo_Temple,_Foguangshan.jpg"
+      }
+     ],
+     "source": "蔬福生活（人間福報）店家頁、2025 年食記與搜尋摘要",
+     "source_url": "https://vegemap.merit-times.com/restaurant_detail/%E5%AE%89%E5%9C%8B%E5%AF%BA%E6%BB%B4%E6%B0%B4%E5%9D%8A?list=2",
+     "source_note": "店家沒有線上菜單；有價格的是近年食記所記，標「現場價」的是查不到價格的品項，早年食記寫飯麵約 100 元。",
+     "menu": [
+      {
+       "category": "🍜 麵",
+       "items": [
+        {
+         "name": "番茄紅燒麵",
+         "price": "約 $120"
+        },
+        {
+         "name": "普羅旺斯細麵",
+         "price": "約 $140"
+        },
+        {
+         "name": "泰式酸辣麵",
+         "price": ""
+        },
+        {
+         "name": "青醬麵",
+         "price": ""
+        }
+       ]
+      },
+      {
+       "category": "🍚 飯",
+       "items": [
+        {
+         "name": "素燥飯",
+         "price": ""
+        },
+        {
+         "name": "素炒飯",
+         "price": ""
+        },
+        {
+         "name": "椰奶咖哩燴飯",
+         "price": ""
+        },
+        {
+         "name": "猴頭菇排飯",
+         "price": "約 $260"
+        }
+       ]
+      },
+      {
+       "category": "🧀 焗烤・點心",
+       "items": [
+        {
+         "name": "焗烤豆腐",
+         "price": "約 $100",
+         "tag": "招牌",
+         "desc": "豆腐、香菇加厚起司"
+        },
+        {
+         "name": "焗烤馬鈴薯",
+         "price": "約 $100",
+         "desc": "比豆腐更有飽足感"
+        },
+        {
+         "name": "焗烤南瓜",
+         "price": "約 $100"
+        },
+        {
+         "name": "佛香煎餃",
+         "price": "",
+         "tag": "招牌",
+         "desc": "像鍋貼，份量大，適合分食"
+        },
+        {
+         "name": "手工餅乾",
+         "price": "約 $100",
+         "desc": "可當伴手禮"
+        }
+       ]
+      }
+     ],
+     "suggest": "**一個人**：一份麵或飯就夠。**兩人**：一份主食＋一份焗烤＋一盤煎餃分著吃。另有火鍋與下午茶品項，以現場菜單為準。"
+    }
+   ]
+  },
+  {
+   "id": "station",
+   "kind": "spot",
+   "emoji": "🚂",
+   "name": "新北投車站",
+   "arrive": "12:50",
+   "depart": "13:20",
+   "address": "臺北市北投區七星街 1 號（七星公園內，捷運新北投站旁）",
+   "map": "新北投車站 七星公園",
+   "hours": "週二–四 10:00–18:00、週五–日 10:00–20:30，週一休",
+   "fee": "免費",
+   "summary": "1916 年的木造火車站，被搬到彰化將近 30 年後又回到北投。",
+   "driver": "車停七星公園地下停車場（車站就在公園地面層）。13:40–14:55 司機開車外出採買外帶餐點（見下方「外帶採買路線」），其餘時間車不用移動。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "新北投車站 0525.jpg",
+     "caption": "**車站正面**：草地後面的深色屋頂木造平房，屋頂上一排圓形小窗。",
+     "credit": "林高志 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0525.jpg/960px-%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0525.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0525.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "新北投車站 0537.jpg",
+     "caption": "**候車室內**：木構屋架、售票口與木柵剪票口。",
+     "credit": "林高志 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0537.jpg/960px-%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0537.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0537.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "新北投車站 0545.jpg",
+     "caption": "**站內展覽**：早年新北投站與鐵道的模型。",
+     "credit": "林高志 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0545.jpg/960px-%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0545.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E6%96%B0%E5%8C%97%E6%8A%95%E8%BB%8A%E7%AB%99_0545.jpg"
+    }
+   ],
+   "focus": [
+    "**屋頂的老虎窗（牛眼窗）**：原本只有 3 個，1937 年車站加長時多做了 1 個，數數看是不是 4 個。",
+    "**屋簷下的雕花托架**：撐住屋簷的木托架帶有裝飾花紋，是這座站最細緻的地方。",
+    "**候車室**：木窗、售票口、剪票口都依原貌修復，現在是小型鐵道與北投歷史展。",
+    "**月台與舊客車廂**：站後方重現月台與鐵軌，還有一節舊式客車廂可以參觀。"
+   ],
+   "story": [
+    "**1916 年**，為了載客人來北投泡溫泉，鐵道部從北投站拉了一條支線「新北投線」，這裡就是終點站「新北投乘降場」。",
+    "1937 年因為遊客太多，車站往旁邊加長，老虎窗也從 3 個變 4 個。",
+    "**1988 年**為了蓋捷運淡水線，新北投線停駛，車站被拆下來搬到彰化的臺灣民俗村。",
+    "民俗村歇業後，北投居民奔走多年爭取「車站回家」，木料運回重組，**2017 年 4 月 1 日**在離原址不遠的七星公園重新開放。"
+   ],
+   "activities": [
+    "在車站正面草地拍全景，記得把 4 個老虎窗拍進去。",
+    "進候車室看展、蓋紀念章。",
+    "到後方月台看舊客車廂，體驗以前搭火車來泡湯的感覺。"
+   ]
+  },
+  {
+   "id": "library",
+   "kind": "spot",
+   "emoji": "📚",
+   "name": "臺北市立圖書館北投分館",
+   "arrive": "13:25",
+   "depart": "13:50",
+   "address": "臺北市北投區光明路 251 號（北投公園內）",
+   "map": "臺北市立圖書館北投分館",
+   "hours": "週二–六 08:30–21:00、週日與週一 09:00–17:00，每月第一個週四休館",
+   "fee": "免費",
+   "summary": "像一艘停在樹林裡的大木船，是臺灣第一座綠建築圖書館。",
+   "driver": "乘客步行。13:40 司機開車外出採買外帶餐點，14:55 回到七星公園停車場。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "Beitou Library front.jpg",
+     "caption": "**圖書館正面**：一層層深色木欄杆陽台、微微斜的大屋頂，前面是北投公園草地。",
+     "credit": "臺北旅遊網 / Attribution",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Beitou_Library_front.jpg/960px-Beitou_Library_front.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Library_front.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Taipei Public Library Beitou Branch Interior 2015.jpg",
+     "caption": "**館內**：大木樑、落地窗，白天幾乎不用開燈。",
+     "credit": "Wpcpey / CC BY 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Taipei_Public_Library_Beitou_Branch_Interior_2015.jpg/960px-Taipei_Public_Library_Beitou_Branch_Interior_2015.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Taipei_Public_Library_Beitou_Branch_Interior_2015.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Taipei Public Library Beitou Branch (2nd floor, outside), Taipei, Taiwan.jpg",
+     "caption": "**戶外木陽台**：可以坐在長椅上看書、吹風。",
+     "credit": "FireFeather / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Taipei_Public_Library_Beitou_Branch_%282nd_floor%2C_outside%29%2C_Taipei%2C_Taiwan.jpg/960px-Taipei_Public_Library_Beitou_Branch_%282nd_floor%2C_outside%29%2C_Taipei%2C_Taiwan.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Taipei_Public_Library_Beitou_Branch_(2nd_floor,_outside),_Taipei,_Taiwan.jpg"
+    }
+   ],
+   "focus": [
+    "**木船般的外觀**：木頭與鋼構組成，環繞整棟的木陽台像船舷。",
+    "**會發電的屋頂**：斜屋頂上裝太陽能板，另一側是草坡綠屋頂，可以隔熱。",
+    "**雨水回收**：屋頂收集的雨水用來澆花、沖廁所。",
+    "**大片落地窗**：引進自然光和風，減少開燈與冷氣。"
+   ],
+   "story": [
+    "原址的舊圖書館拆除後，由九典聯合建築師事務所（郭英釗、張清華）重新設計，**2006 年**啟用。",
+    "它是臺灣第一座取得最高等級「鑽石級」綠建築標章的圖書館。",
+    "**2012 年**被美國網站 Flavorwire 選為「全球最美 25 座公立圖書館」之一，從此變成觀光景點。"
+   ],
+   "activities": [
+    "先在公園步道拍外觀，再進館走一圈。",
+    "拿本雜誌到戶外木陽台坐一下，看樹、聽北投溪水聲。",
+    "找找看屋頂的太陽能板和綠屋頂在哪裡。"
+   ],
+   "tip": "這是正常營運的圖書館：館內請輕聲、手機靜音，拍照請遵守館方規定，不要拍到正在看書的讀者。"
+  },
+  {
+   "id": "museum",
+   "kind": "spot",
+   "emoji": "♨️",
+   "name": "北投溫泉博物館",
+   "arrive": "13:55",
+   "depart": "14:25",
+   "address": "臺北市北投區中山路 2 號",
+   "map": "北投溫泉博物館",
+   "hours": "週二–日 10:00–18:00，週一與國定假日休",
+   "fee": "免費（入館要換拖鞋）",
+   "summary": "1913 年的公共浴場，當年號稱東亞最大，差點被拆掉，是小學生救回來的。",
+   "driver": "乘客步行，車留在七星公園地下停車場。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "Beitou Hotspring Museum 2015.jpg",
+     "caption": "**博物館外觀**：一樓紅磚、二樓木造的兩層樓洋房，就在圖書館隔壁。",
+     "credit": "Wing1990hk / CC BY 3.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Beitou_Hotspring_Museum_2015.jpg/960px-Beitou_Hotspring_Museum_2015.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hotspring_Museum_2015.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "北投溫泉博物館大浴池.jpg",
+     "caption": "**大浴池**：被圓拱列柱圍起來的長方形浴池。",
+     "credit": "寺人孟子 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%A4%A7%E6%B5%B4%E6%B1%A0.jpg/960px-%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%A4%A7%E6%B5%B4%E6%B1%A0.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8%E5%A4%A7%E6%B5%B4%E6%B1%A0.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "北投溫泉博物館 大浴池窗戶.jpg",
+     "caption": "**彩繪玻璃花窗**：大浴池旁的拱窗。",
+     "credit": "吳蕙宇 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8_%E5%A4%A7%E6%B5%B4%E6%B1%A0%E7%AA%97%E6%88%B6.jpg/960px-%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8_%E5%A4%A7%E6%B5%B4%E6%B1%A0%E7%AA%97%E6%88%B6.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E6%BA%AB%E6%B3%89%E5%8D%9A%E7%89%A9%E9%A4%A8_%E5%A4%A7%E6%B5%B4%E6%B1%A0%E7%AA%97%E6%88%B6.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Beitou Hot Spring Museum Interior 2015.JPG",
+     "caption": "**二樓榻榻米大廳**：以前泡完湯在這裡喝茶休息。",
+     "credit": "Wing1990hk / CC BY 3.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Beitou_Hot_Spring_Museum_Interior_2015.JPG/960px-Beitou_Hot_Spring_Museum_Interior_2015.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hot_Spring_Museum_Interior_2015.JPG"
+    }
+   ],
+   "focus": [
+    "**一樓大浴池**：圓拱列柱圍著長方形浴池，池子很深，當年是「站著泡」的，而且只給男性使用。",
+    "**彩繪玻璃花窗**：下午陽光照進來，顏色會映在池邊。",
+    "**二樓榻榻米大廳**：寬敞通風，四周有迴廊可以看北投公園。",
+    "**北投石**：全世界少數以臺灣地名命名的礦物，帶有微量放射性，館內有實物展示。",
+    "**外觀**：一樓磚造、二樓木造，是仿英國鄉間別墅的樣式。"
+   ],
+   "story": [
+    "**1913 年**落成，當時叫「北投溫泉公共浴場」，仿照日本靜岡伊豆山溫泉的浴場興建，號稱東亞最大。",
+    "1923 年日本皇太子裕仁（後來的昭和天皇）來臺時曾到北投參訪。",
+    "戰後這裡陸續被當成各種單位的辦公與宿舍空間，後來荒廢，幾乎被遺忘。",
+    "**1994 年**，北投國小的老師帶學生做鄉土教學時發現這棟廢墟，師生與居民連署請願保存；1997 年列為古蹟，**1998 年**以博物館重新開放。"
+   ],
+   "activities": [
+    "換上拖鞋，先上二樓榻榻米大廳坐一下，再下樓看大浴池。",
+    "站在大浴池邊，以拱柱與花窗為背景拍照。",
+    "看北投石展示，以及北投曾是「臺語片好萊塢」的電影展區。"
+   ]
+  },
+  {
+   "id": "plum",
+   "kind": "spot",
+   "emoji": "🖋️",
+   "name": "北投梅庭",
+   "arrive": "14:30",
+   "depart": "14:55",
+   "address": "臺北市北投區中山路 6 號",
+   "map": "北投梅庭",
+   "hours": "週二–日 10:00–18:00，週一休",
+   "fee": "免費",
+   "summary": "書法家于右任夏天避暑的日式小屋，門口「梅庭」兩個字就是他寫的。",
+   "driver": "乘客步行，車留在七星公園地下停車場。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "Beitou Plum Garden in Taipei, Taiwan.JPG",
+     "caption": "**梅庭外觀**：中山路旁、大樹下的深色木造平房，入口有木欄杆坡道。",
+     "credit": "SSR2000 / CC BY-SA 3.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Beitou_Plum_Garden_in_Taipei%2C_Taiwan.JPG/960px-Beitou_Plum_Garden_in_Taipei%2C_Taiwan.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Plum_Garden_in_Taipei,_Taiwan.JPG"
+    },
+    {
+     "role": "highlight",
+     "file": "北投梅庭 0181.jpg",
+     "caption": "**室內書法展示**：屋內掛著于右任風格的書法作品。",
+     "credit": "林高志 / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/%E5%8C%97%E6%8A%95%E6%A2%85%E5%BA%AD_0181.jpg/960px-%E5%8C%97%E6%8A%95%E6%A2%85%E5%BA%AD_0181.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%8A%95%E6%A2%85%E5%BA%AD_0181.jpg"
+    }
+   ],
+   "focus": [
+    "**門柱上的「梅庭」題字**：于右任親筆，進門前先找一下。",
+    "**上下兩層不同做法**：上層是日式木造屋，下層順著坡地用鋼筋混凝土蓋成，還設有防空避難室。",
+    "**木格窗與緣廊**：窗外就是北投溪與北投公園的樹。",
+    "**書法作品**：室內展示于右任的書法與生平。"
+   ],
+   "story": [
+    "房子建於 **1930 年代末**，是日治時期的私人別墅；下層的防空避難室反映了當時戰爭逼近的氣氛。",
+    "戰後成為監察院長、有「一代草聖」之稱的書法家**于右任**夏天避暑的地方。",
+    "後來登錄為歷史建築，整修後開放參觀，成為北投公園散步路線上的一站。"
+   ],
+   "activities": [
+    "在門口找「梅庭」題字並合照。",
+    "進屋看書法，認識「標準草書」。",
+    "在緣廊或庭院的大樹下坐一下，聽北投溪水聲。"
+   ]
+  },
+  {
+   "id": "picnic",
+   "kind": "picnic",
+   "emoji": "🧺",
+   "name": "北投公園野餐（外帶美食）",
+   "arrive": "15:00",
+   "depart": "15:40",
+   "address": "臺北市北投區北投公園（溫泉博物館前草坪一帶）",
+   "map": "北投公園 北投溫泉博物館",
+   "summary": "把外帶的披薩與古早味甜品帶到公園草地野餐，休息一下再上地熱谷。",
+   "driver": "14:55 回到七星公園停車場後，把餐點提到公園（步行約 8 分鐘）與乘客會合，約 15:05 開吃；15:40 野餐結束後回停車場待命。",
+   "how": [
+    "**13:40** 司機單獨開車外出採買：先到**凱撒披薩**（約 14:00 取餐），再到**水龜伯古早味**買甜品，**14:55** 回到七星公園停車場。",
+    "**15:00** 乘客在公園草地鋪好野餐墊，**約 15:05** 司機帶著餐點到，一起吃約 35 分鐘。",
+    "**披薩到時已出爐約 1 小時**，會偏涼：建議以披薩、雞腿、雞翅為主，薯條與洋蔥圈會變軟；甜品選熱的燒麻糬、花生湯、豆花，**刨冰與冰品會融化，不要外帶**。",
+    "**凱撒披薩 14:30 休息、17:30 才再開，週一公休**，所以取餐一定要在 14:20 前；建議出發前先打電話（02-2891-9019）詢問可否預訂外帶。",
+    "**自備**：野餐墊、濕紙巾、垃圾袋（垃圾一律帶走）。公園內可否野餐、哪個位置適合，請當天現場確認；溫泉博物館、圖書館、梅庭室內請勿飲食。"
+   ],
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "Beitou Hot Spring Museum - 1150403.jpg",
+     "caption": "**博物館前的草地**：以紅磚兩層樓的溫泉博物館為背景，野餐就在這一帶找位置。",
+     "credit": "Allervous / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Beitou_Hot_Spring_Museum_-_1150403.jpg/960px-Beitou_Hot_Spring_Museum_-_1150403.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hot_Spring_Museum_-_1150403.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Beitou Hot Spring Museum and TPL Beitou Branch aerial photograph 20210818.jpg",
+     "caption": "**公園空照**：溫泉博物館、圖書館與周圍的綠地，草地在兩棟建築之間與周邊。",
+     "credit": "臺北旅遊網 / Attribution",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Beitou_Hot_Spring_Museum_and_TPL_Beitou_Branch_aerial_photograph_20210818.jpg/960px-Beitou_Hot_Spring_Museum_and_TPL_Beitou_Branch_aerial_photograph_20210818.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hot_Spring_Museum_and_TPL_Beitou_Branch_aerial_photograph_20210818.jpg"
+    }
+   ],
+   "tip": "下雨備案：當天早上看天氣決定，改回車上用餐或取消外帶；若已電話預訂披薩，請於出發前通知店家。",
+   "shops": [
+    {
+     "label": "凱撒披薩",
+     "name": "凱撒披薩 Caesar's Pizza 北投店",
+     "address": "臺北市北投區中央北路二段 408 號 1 樓（捷運復興崗站 1 號出口步行約 3 分鐘）",
+     "map": "凱撒披薩 Caesar's pizza 北投店",
+     "hours": "週二–日 11:30–14:30、17:30–22:00（週一公休）",
+     "phone": "02-2891-9019",
+     "diet": "披薩與炸物（葷食）",
+     "note": "12 吋披薩，顧客評論提到店家會先切成 8 片，吃不完也能裝紙袋外帶。**取餐須在 14:20 前（14:30 休息）。**這家店找不到可自由使用的照片，請點「地圖／店家照片」看實拍。",
+     "source": "Uber Eats「Caesar’s Pizza 北投店」頁面與 MetroBites 店家資訊（2026-11-14 查詢）",
+     "source_url": "https://www.ubereats.com/tw/store/caesars-pizza-%E5%8C%97%E6%8A%95%E5%BA%97/pFu5N4DDWwmll_WafCjs6g",
+     "source_note": "價格為外送平台價，店內價格可能不同；Uber Eats 頁面營業時間與 MetroBites 不一致，以 MetroBites 為準並請電話確認。",
+     "menu": [
+      {
+       "category": "🍕 披薩（12 吋）",
+       "items": [
+        {
+         "name": "瑪格麗特披薩",
+         "price": 400,
+         "tag": "人氣第 2"
+        },
+        {
+         "name": "夏威夷披薩",
+         "price": 430
+        },
+        {
+         "name": "綜合起司披薩",
+         "price": 440
+        },
+        {
+         "name": "美式臘腸披薩",
+         "price": 460,
+         "tag": "人氣第 3"
+        },
+        {
+         "name": "鄉村雞肉披薩",
+         "price": 490
+        },
+        {
+         "name": "綜合肉披薩",
+         "price": 510
+        },
+        {
+         "name": "墨西哥牛肉披薩",
+         "price": 510
+        },
+        {
+         "name": "海鮮披薩",
+         "price": 550,
+         "desc": "蝦仁、花枝、燻鮭魚配番茄醬汁"
+        },
+        {
+         "name": "青醬海鮮披薩",
+         "price": 550,
+         "tag": "食記推薦"
+        },
+        {
+         "name": "白醬海鮮披薩",
+         "price": 550
+        },
+        {
+         "name": "黑椒燻牛肉披薩",
+         "price": 550
+        },
+        {
+         "name": "總匯披薩",
+         "price": 570
+        }
+       ]
+      },
+      {
+       "category": "🍗 炸物・薯條",
+       "items": [
+        {
+         "name": "雞腿",
+         "price": 180,
+         "tag": "人氣第 1",
+         "desc": "涼了仍好吃，適合野餐"
+        },
+        {
+         "name": "雞翅",
+         "price": 130
+        },
+        {
+         "name": "雞柳條（6 條）",
+         "price": 280
+        },
+        {
+         "name": "炸花枝圈",
+         "price": 200
+        },
+        {
+         "name": "洋蔥圈",
+         "price": 180
+        },
+        {
+         "name": "起司條",
+         "price": 180
+        },
+        {
+         "name": "原味薯條",
+         "price": 160,
+         "desc": "久放會回軟"
+        },
+        {
+         "name": "松露薯條",
+         "price": 240
+        },
+        {
+         "name": "辣肉醬薯條",
+         "price": "約 $210–260",
+         "desc": "各來源價格不一"
+        }
+       ]
+      }
+     ],
+     "suggest": "每個 12 吋約 8 片，約 3–4 人一個。**野餐建議**：一個清爽口味（瑪格麗特或夏威夷）＋一個重口味（海鮮或黑椒燻牛肉），再加雞腿與雞翅；薯條放一小時會軟，可以不點。"
+    },
+    {
+     "label": "水龜伯古早味",
+     "name": "水龜伯古早味",
+     "address": "臺北市北投區石牌路二段 75 巷 8 號（捷運石牌站 1 號出口步行約 5–6 分鐘）",
+     "map": "水龜伯古早味 石牌",
+     "hours": "11:30–23:00",
+     "phone": "02-2827-4788",
+     "diet": "古早味甜品、豆花、冰品；店內為自助式",
+     "note": "石牌的人氣老店，平日也常排隊。**11 月到隔年 4 月有冬季熱甜品**，適合外帶；冰品放久會融化。外帶能否裝袋、等候多久，請現場詢問（我沒有查到店家的外帶說明）。",
+     "source": "「涵的足跡」部落格 2026 年 6 月菜單（hanblog.tw）、布雷克部落格 2025 年 10 月",
+     "source_url": "https://hanblog.tw/sgb_dessert/",
+     "source_note": "價格是部落格記錄，現場以櫃檯後牆上的菜單為準；未列價的品項標「現場價」。",
+     "menu": [
+      {
+       "category": "🔥 熱甜品（冬季 11–4 月）",
+       "items": [
+        {
+         "name": "黑糖燒麻糬（一份 2 顆）",
+         "price": 60,
+         "tag": "招牌",
+         "desc": "一顆 $35；花生粉包裹，趁熱吃"
+        },
+        {
+         "name": "花生湯加油條",
+         "price": 70
+        },
+        {
+         "name": "花生湯",
+         "price": ""
+        },
+        {
+         "name": "紅豆湯",
+         "price": ""
+        },
+        {
+         "name": "燒仙草",
+         "price": ""
+        },
+        {
+         "name": "桂圓粥",
+         "price": ""
+        },
+        {
+         "name": "芋見黑米粥",
+         "price": ""
+        }
+       ]
+      },
+      {
+       "category": "🍮 豆花",
+       "items": [
+        {
+         "name": "古早味豆花",
+         "price": 45,
+         "desc": "附三種配料，常見紅豆、花生、粉圓"
+        },
+        {
+         "name": "鮮奶嫩豆花",
+         "price": "約 $55",
+         "desc": "舊資料，價格請確認"
+        },
+        {
+         "name": "杏仁嫩豆花",
+         "price": ""
+        }
+       ]
+      },
+      {
+       "category": "🍧 冰品（外帶易融化）",
+       "items": [
+        {
+         "name": "黑糖刨冰",
+         "price": 55,
+         "desc": "任選四種料"
+        },
+        {
+         "name": "雙仙鬧奶",
+         "price": 75,
+         "desc": "仙草凍加杏仁凍、淋鮮奶"
+        },
+        {
+         "name": "半舊冰",
+         "price": "",
+         "desc": "香蕉味綿綿冰加煉乳"
+        },
+        {
+         "name": "米苔目冰",
+         "price": ""
+        }
+       ]
+      }
+     ],
+     "suggest": "**外帶首選**：黑糖燒麻糬（熱的，愈快吃愈軟）＋花生湯加油條或豆花；**不要外帶**刨冰與雙仙鬧奶。每人一份甜品，或兩人合點一份燒麻糬加一碗豆花。"
+    }
+   ]
+  },
+  {
+   "id": "valley",
+   "kind": "spot",
+   "emoji": "🌋",
+   "name": "地熱谷",
+   "arrive": "15:50",
+   "depart": "16:15",
+   "address": "臺北市北投區中山路（梅庭再往上走約 5 分鐘）",
+   "map": "地熱谷 北投",
+   "hours": "週二–日 09:00–17:00，週一休",
+   "fee": "免費",
+   "summary": "一池冒著白煙的碧綠色滾燙溫泉，是北投溫泉的源頭之一（停留較短，只有約 25 分鐘）。",
+   "driver": "乘客步行。16:15 離開後走回七星公園（下坡約 15 分鐘）上車。",
+   "photos": [
+    {
+     "role": "landmark",
+     "file": "Beitou Hell Valley 20220722 04.jpg",
+     "caption": "**地熱谷**：樹林圍著一池碧綠色的水，池邊有步道——走到這裡就是了。",
+     "credit": "Yu tptw / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Beitou_Hell_Valley_20220722_04.jpg/960px-Beitou_Hell_Valley_20220722_04.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hell_Valley_20220722_04.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Beitou Hell Valley 20220722 01.jpg",
+     "caption": "**水面的蒸氣**：天氣涼的時候整池白煙瀰漫。",
+     "credit": "Yu tptw / CC BY-SA 4.0",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Beitou_Hell_Valley_20220722_01.jpg/960px-Beitou_Hell_Valley_20220722_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hell_Valley_20220722_01.jpg"
+    },
+    {
+     "role": "highlight",
+     "file": "Beitou Hell Valley 20220623 01.jpg",
+     "caption": "**空中看地熱谷**：碧綠色的池子與環池步道。",
+     "credit": "臺北旅遊網 / Attribution",
+     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Beitou_Hell_Valley_20220623_01.jpg/960px-Beitou_Hell_Valley_20220623_01.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Beitou_Hell_Valley_20220623_01.jpg"
+    }
+   ],
+   "focus": [
+    "**碧綠色的池水與白煙**：這是「青磺泉」，水溫約 90°C、酸鹼值只有 pH 1–2，酸得像檸檬汁還強。",
+    "**硫磺味**：一走近就聞得到，是火山地熱的味道。",
+    "**池邊的岩石顏色**：長年被酸性溫泉浸泡，石頭表面有黃、白色的沉積。",
+    "**入口附近的手湯**：可以把手泡進溫泉水裡感受溫度。"
+   ],
+   "story": [
+    "因為終年熱氣瀰漫、看起來陰森，以前被叫做「地獄谷」；日治時期以「磺泉玉霧」之名列入臺灣八勝十二景。",
+    "**1905 年**，日本學者岡本要八郎在下游的北投溪發現一種帶放射性的礦物，1912 年正式命名為「北投石」，就是這裡流出去的酸性溫泉水長年結晶形成的。",
+    "早年遊客會在這裡煮溫泉蛋，後來因為有人燙傷、也影響水質而全面禁止，改成現在有欄杆的環池步道。"
+   ],
+   "activities": [
+    "沿步道繞池邊走一圈，讓蒸氣從身邊飄過。",
+    "在入口的手湯泡泡手。",
+    "以白煙和碧綠池水當背景拍照（風向一變煙會撲過來，注意相機鏡頭）。"
+   ],
+   "tip": "水溫接近沸點，請勿翻越欄杆、不要讓小孩靠近池邊。**17:00 關門**。"
+  },
+  {
+   "id": "end",
+   "kind": "end",
+   "emoji": "🏁",
+   "name": "板橋文化路郵局",
+   "arrive": "17:15",
+   "address": "新北市板橋區文化路一段（捷運新埔站 1 號出口旁）",
+   "map": "板橋文化路郵局",
+   "summary": "回到出發點解散。",
+   "driver": "郵局前路邊下客，下班時段車多，注意公車與機車。"
+  }
+ ],
+ "legs": [
+  {
+   "from": "start",
+   "to": "hongfa",
+   "mode": "drive",
+   "depart": "09:00",
+   "arrive": "09:45",
+   "minutes": 45,
+   "km": 20,
+   "brief": "環河快速道路＋洲美快速道路到北投",
+   "nav_to": "臺北市北投區溫泉路銀光巷",
+   "route": [
+    "板橋文化路一段往臺北方向 → 過**華江橋**。",
+    "下橋接**環河快速道路**往北（往士林、北投方向）。",
+    "續接**洲美快速道路**一路到底，接**大度路**往北投方向。",
+    "右轉**大業路**直走到新北投 → 接光明路、**溫泉路**上坡。",
+    "到溫泉路的**銀光巷口**靠邊讓乘客下車。"
+   ],
+   "caution": "替代路線：台 64 線 → 國道 1 號北上 → 重慶北路交流道 → 百齡橋 → 承德路 → 大業路。哪條快看當下路況。",
+   "parking": "銀光巷口臨停下客即可，**不要開進巷子**。乘客步行到銀光巷 25 號再往上的石板橋登山口，上山約 15–20 分鐘。"
+  },
+  {
+   "from": "hongfa",
+   "to": "lunch",
+   "mode": "drive",
+   "depart": "11:15",
+   "arrive": "11:30",
+   "minutes": 15,
+   "km": 3,
+   "brief": "下山到午餐地點",
+   "nav_from": "臺北市北投區溫泉路銀光巷",
+   "route": [
+    "11:10 前回到溫泉路銀光巷口等乘客。",
+    "**方案 A（妙觀音素食 光明路 61 號）**：溫泉路下坡 → 光明路直走到 61 號，約 10 分鐘。",
+    "**方案 B（安國寺 復興三路 101 巷 10 號）**：溫泉路下坡 → 光明路 → 中和街 → **復興三路**上山，看到「佛光山安國寺」石碑即到，約 15 分鐘。"
+   ],
+   "caution": "下方導航按鈕預設是方案 A；選方案 B 請改搜尋「佛光山安國寺」。復興三路是山路，彎多坡陡。",
+   "parking": "A：店門口臨停下客，車停附近路邊收費格或公有停車場。B：安國寺前有免費停車位，法會日可能客滿。"
+  },
+  {
+   "from": "lunch",
+   "to": "station",
+   "mode": "drive",
+   "depart": "12:40",
+   "arrive": "12:50",
+   "minutes": 10,
+   "km": 2,
+   "brief": "開到七星公園停車，下午都不用再移車",
+   "nav_to": "七星公園地下停車場 北投",
+   "route": [
+    "從方案 A：沿光明路往新北投方向 → 七星公園。",
+    "從方案 B：復興三路下山 → 中和街 → 光明路 → 七星公園。",
+    "依導航進入**七星公園地下停車場**（就在捷運新北投站旁）。"
+   ],
+   "parking": "**七星公園地下停車場**：每小時約 30 元，從 12:50 停到 16:30 約 4 小時。新北投車站就在停車場上方的公園裡。中型巴士以上請先確認限高。"
+  },
+  {
+   "from": "station",
+   "to": "library",
+   "mode": "walk",
+   "minutes": 5,
+   "brief": "過光明路進北投公園，沿步道往上"
+  },
+  {
+   "from": "library",
+   "to": "museum",
+   "mode": "walk",
+   "minutes": 2,
+   "brief": "就在隔壁"
+  },
+  {
+   "from": "museum",
+   "to": "plum",
+   "mode": "walk",
+   "minutes": 5,
+   "brief": "沿中山路往上"
+  },
+  {
+   "from": "plum",
+   "to": "picnic",
+   "mode": "walk",
+   "minutes": 3,
+   "brief": "沿中山路走回公園草地"
+  },
+  {
+   "from": "picnic",
+   "to": "valley",
+   "mode": "walk",
+   "minutes": 8,
+   "brief": "沿中山路一路往上"
+  },
+  {
+   "from": "valley",
+   "to": "end",
+   "mode": "drive",
+   "depart": "16:30",
+   "arrive": "17:15",
+   "minutes": 45,
+   "km": 20,
+   "brief": "乘客先走回七星公園上車（約 15 分），再開回板橋",
+   "nav_from": "七星公園地下停車場 北投",
+   "before": "乘客 **16:15** 離開地熱谷，沿北投公園下坡走回七星公園，約 16:30 到。請 16:25 把車開出停車場，在七星公園／捷運新北投站旁等候上車，**16:30 發車**。",
+   "route": [
+    "七星公園出發 → **大業路**直走。",
+    "接**大度路** → 上**洲美快速道路**往南。",
+    "續接**環河快速道路**往南。",
+    "下**華江橋**往板橋 → 文化路一段 → 板橋文化路郵局。"
+   ],
+   "caution": "回程剛好碰上下班車潮，華江橋與文化路一段容易塞，到達時間可能延後 10–20 分鐘。",
+   "parking": "郵局前路邊下客。"
+  }
+ ],
+ "errand": {
+  "insert_after": "library",
+  "title": "外帶採買路線（司機單獨行動）",
+  "flow_note": "司機外出採買凱撒披薩與水龜伯",
+  "intro": "13:40 司機獨自開車，依序到兩家店取餐後回七星公園停車場；乘客這段時間繼續逛圖書館、溫泉博物館與梅庭。先去凱撒披薩，是因為它 14:30 就休息；水龜伯營業到 23:00，所以排在後面。**兩家店在不同方向，全程約 75 分鐘，路名與時間都是估計值，請以導航為準。**",
+  "stops": [
+   {
+    "name": "七星公園地下停車場",
+    "address": "臺北市北投區七星公園（捷運新北投站旁）",
+    "map": "七星公園地下停車場 北投",
+    "depart": "13:40",
+    "note": "出場。出場再進場可能重新計費，請現場確認。"
+   },
+   {
+    "name": "凱撒披薩 Caesar's Pizza 北投店",
+    "address": "臺北市北投區中央北路二段 408 號 1 樓",
+    "map": "凱撒披薩 Caesar's pizza 北投店",
+    "arrive": "13:50",
+    "depart": "14:05",
+    "note": "約 14:00 取餐，建議前一天或當天中午電話（02-2891-9019）預訂外帶。**14:30 休息，最晚 14:20 前要到。**"
+   },
+   {
+    "name": "水龜伯古早味",
+    "address": "臺北市北投區石牌路二段 75 巷 8 號",
+    "map": "水龜伯古早味 石牌",
+    "arrive": "14:20",
+    "depart": "14:35",
+    "note": "買熱甜品（燒麻糬、花生湯加油條、豆花），常需排隊約 10–15 分鐘；披薩留在車上。"
+   },
+   {
+    "name": "七星公園地下停車場",
+    "address": "臺北市北投區七星公園（捷運新北投站旁）",
+    "map": "七星公園地下停車場 北投",
+    "arrive": "14:55",
+    "note": "停好車後把餐點提到公園草地（步行約 8 分鐘），約 15:05 與乘客會合。"
+   }
+  ],
+  "legs": [
+   {
+    "minutes": 10,
+    "km": 3.5,
+    "route": [
+     "從七星公園地下停車場出來，沿光明路／大業路回到北投捷運站一帶。",
+     "接**中央北路**往復興崗（捷運復興崗站）方向。",
+     "目的地：中央北路二段 408 號 1 樓，在復興崗站 1 號出口附近。"
+    ],
+    "caution": "路名與時間為估計；中央北路沿線路邊停車位有限。",
+    "parking": "路邊臨停，司機一人下車取餐（約 5 分鐘）；有預訂可縮短等待。"
+   },
+   {
+    "minutes": 15,
+    "km": 5,
+    "route": [
+     "中央北路往捷運北投站方向，再依導航往**石牌**方向（大度路／石牌路一帶）。",
+     "目的地：石牌路二段 75 巷 8 號，巷口有「雲頂阿二麻辣食堂」，在捷運石牌站 1 號出口步行約 5–6 分鐘處。"
+    ],
+    "caution": "水龜伯在巷弄內，現場常排隊；外帶可否與包裝方式請現場詢問。",
+    "parking": "巷子窄，建議在石牌路二段找路邊格臨停，司機一人進巷購買（能否停車請現場確認）。"
+   },
+   {
+    "minutes": 20,
+    "km": 6,
+    "route": [
+     "從石牌路二段依導航往北投方向（約 6 公里，估計）。",
+     "回到七星公園地下停車場停車，把餐點帶到公園草地。"
+    ],
+    "caution": "下午 14:35–15:00 車流通常不大，但北投市區路口多，保守抓 20–25 分鐘。",
+    "parking": "停回七星公園地下停車場。"
+   }
+  ]
+ }
+}/*__END_TRIP_JSON__*/;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");   // **粗體** only
+const mins = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+const dur = (a, b) => mins(b) - mins(a);
+const q = s => encodeURIComponent(s);
+const mapUrl = s => "https://www.google.com/maps/search/?api=1&query=" + q(s.map || s.name);
+const navUrl = (o, d, mode) => `https://www.google.com/maps/dir/?api=1&origin=${q(o)}&destination=${q(d)}&travelmode=${mode || "driving"}`;
+const list = a => (a || []).map(x => `<li>${rich(x)}</li>`).join("");
+const byId = Object.fromEntries(TRIP.stops.map(s => [s.id, s]));
+const legNav = l => ({ o: l.nav_from || byId[l.from].map || byId[l.from].name, d: l.nav_to || byId[l.to].map || byId[l.to].name });
+
+function photoHtml(p) {
+  const src = p.src || `https://commons.wikimedia.org/wiki/Special:FilePath/${q(p.file)}?width=960`;
+  const page = p.page || (p.file ? `https://commons.wikimedia.org/wiki/File:${q(p.file)}` : src);
+  const lm = p.role === "landmark";
+  return `<figure><a href="${esc(page)}" target="_blank" rel="noopener"><img src="${esc(src)}" alt="${esc(p.caption)}"></a>
+    <span class="role ${lm ? "" : "hl"}">${lm ? "📍 看到這個就到了" : "⭐ 值得看"}</span>
+    <figcaption>${rich(p.caption)}<small>照片：${esc(p.credit || "")}</small></figcaption></figure>`;
+}
+
+// ---------- header ----------
+document.title = TRIP.title;
+$("h-title").textContent = TRIP.title;
+$("h-tag").textContent = TRIP.tagline || "";
+$("h-chips").innerHTML = (TRIP.chips || []).map(c => `<span class="chip">${esc(c)}</span>`).join("");
+const noticeHtml = TRIP.notices && TRIP.notices.length ? `<div class="notice"><strong>⚠️ 出發前確認</strong><ul>${list(TRIP.notices)}</ul></div>` : "";
+
+// ---------- 1. flow ----------
+{
+  let rows = "";
+  TRIP.stops.forEach((s, i) => {
+    const isEnd = s.kind === "start" || s.kind === "end";
+    const time = s.kind === "start" ? `${s.depart} 出發` : s.kind === "end" ? `${s.arrive} 抵達` : `${s.arrive} – ${s.depart}`;
+    const stay = isEnd ? "" : `<span class="stay">${{ meal: "用餐", picnic: "野餐" }[s.kind] || "停留"} ${dur(s.arrive, s.depart)} 分</span>`;
+    const anchor = s.kind === "spot" ? "#spot-" + s.id : s.kind === "meal" ? "#meals" : s.kind === "picnic" ? "#picnic" : "#driver";
+    rows += `<tr><td><span class="t">${time}</span></td><td class="place"><a href="${anchor}">${esc(s.emoji || "")} ${esc(s.name)}</a></td><td>${stay}</td><td>${rich(s.summary || "")}</td></tr>`;
+    if (TRIP.errand && TRIP.errand.insert_after === s.id) {
+      const E = TRIP.errand;
+      rows += `<tr class="move"><td colspan="4">🚐 ${E.stops[0].depart}–${E.stops[E.stops.length - 1].arrive}｜${esc(E.flow_note || E.title)}（乘客照常步行遊覽）</td></tr>`;
+    }
+    const l = TRIP.legs[i];
+    if (l) rows += `<tr class="move"><td colspan="4">${l.mode === "walk" ? "🚶 步行" : "🚐 車程"}約 ${l.minutes} 分${l.km ? `（約 ${l.km} 公里）` : ""}${l.brief ? "｜" + esc(l.brief) : ""}</td></tr>`;
+  });
+  $("flow-body").innerHTML = noticeHtml + `<div class="tw"><table><thead><tr><th>時間</th><th>地點</th><th>停留</th><th>一句話重點</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+// ---------- 2. spots ----------
+$("spots-body").innerHTML = `<p class="desc">每一站先看「📍 看到這個就到了」的照片確認沒走錯，再看「⭐ 值得看」的照片知道要找什麼。點照片可看原圖與出處。</p>` +
+  TRIP.stops.filter(s => s.kind === "spot").map((s, n) => `
+  <article class="spot" id="spot-${esc(s.id)}">
+    <div class="spot-head"><h3>${esc(s.emoji || "")} ${n + 1}. ${esc(s.name)}</h3>
+      <span class="meta">${s.arrive} – ${s.depart}（${dur(s.arrive, s.depart)} 分）</span></div>
+    <p class="meta">${[s.hours && "🕒 " + s.hours, s.fee && "🎫 " + s.fee, s.address && "📍 " + s.address].filter(Boolean).map(esc).join("　")}
+      　<a href="${mapUrl(s)}" target="_blank" rel="noopener">開啟地圖</a></p>
+    <p class="tagline">${rich(s.summary || "")}</p>
+    <div class="photos">${(s.photos || []).map(photoHtml).join("")}</div>
+    <div class="boxes">
+      <div class="box"><h4>👀 到了值得關注什麼</h4><ul>${list(s.focus)}</ul></div>
+      <div class="box story"><h4>📖 這裡發生過什麼故事</h4><ul>${list(s.story)}</ul></div>
+      <div class="box act"><h4>🎯 在這裡可以做什麼</h4><ul>${list(s.activities)}</ul></div>
+    </div>
+    ${s.tip ? `<div class="tip">💡 ${rich(s.tip)}</div>` : ""}
+  </article>`).join("");
+
+// ---------- 3. meals ----------
+function optHtml(o, id, on, label) {
+  return `<div class="opt ${on ? "on" : ""}" id="${id}">
+      ${label ? `<div class="opt-label">${esc(label)}</div>` : ""}
+      <div class="banner"><h3>${esc(o.name)}</h3>
+        <p>📍 ${esc(o.address || "")}　<a href="${mapUrl(o)}" target="_blank" rel="noopener">地圖／店家照片</a></p>
+        <p>${[o.hours && "🕒 " + o.hours, o.phone && "☎ " + o.phone, o.diet && "🥬 " + o.diet].filter(Boolean).map(esc).join("　")}</p>
+        ${o.note ? `<p>${rich(o.note)}</p>` : ""}</div>
+      ${(o.photos || []).length ? `<div class="photos">${o.photos.map(photoHtml).join("")}</div>` : ""}
+      <div class="menu">${(o.menu || []).map(c => `<div class="cat"><h4>${esc(c.category)}</h4>${c.items.map(d => `
+        <div class="dish"><div>${esc(d.name)}${d.tag ? `<span class="hot">${esc(d.tag)}</span>` : ""}${d.desc ? `<small>${esc(d.desc)}</small>` : ""}</div>
+        <div class="price">${d.price != null && d.price !== "" ? (typeof d.price === "number" ? "$" + d.price : esc(d.price)) : "現場價"}</div></div>`).join("")}</div>`).join("")}</div>
+      ${o.suggest ? `<div class="tip">💡 ${rich(o.suggest)}</div>` : ""}
+      <p class="src">菜單來源：${o.source_url ? `<a href="${esc(o.source_url)}" target="_blank" rel="noopener">${esc(o.source || o.source_url)}</a>` : esc(o.source || "")}${o.source_note ? "｜" + esc(o.source_note) : ""}</p>
+    </div>`;
+}
+$("meals-body").innerHTML = TRIP.stops.filter(s => s.kind === "meal" || s.kind === "picnic").map((s, mi) => {
+  if (s.kind === "picnic") {
+    return `<div id="picnic"><p class="desc"><strong>${esc(s.emoji || "")} ${esc(s.name)}</strong>　${s.arrive} – ${s.depart}（${dur(s.arrive, s.depart)} 分）。${rich(s.summary || "")}</p>
+      <div class="notice"><strong>怎麼進行</strong><ul>${list(s.how)}</ul></div>
+      <p class="meta">📍 ${esc(s.address || "")}　<a href="${mapUrl(s)}" target="_blank" rel="noopener">開啟地圖</a></p>
+      <div class="photos">${(s.photos || []).map(photoHtml).join("")}</div>
+      ${(s.shops || []).map((o, i) => optHtml(o, `picnic-${i}`, true, `外帶店 ${i + 1}／${s.shops.length}`)).join("")}
+      ${s.tip ? `<div class="tip">💡 ${rich(s.tip)}</div>` : ""}</div>`;
+  }
+  const opts = s.options || [];
+  const tabs = opts.length > 1 ? `<div class="tabs">${opts.map((o, i) => `<button class="${i ? "" : "on"}" data-meal="${mi}" data-opt="${i}">${esc(o.label || o.name)}</button>`).join("")}</div>` : "";
+  return `<p class="desc"><strong>${esc(s.name)}</strong>　${s.arrive} – ${s.depart}（${dur(s.arrive, s.depart)} 分）。${rich(s.summary || "")}</p>${tabs}` +
+    opts.map((o, i) => optHtml(o, `meal-${mi}-${i}`, !i, opts.length > 1 ? `${o.label || o.name}（${i + 1}／${opts.length}）` : "")).join("");
+}).join("<hr style='border:none;border-top:1px solid var(--line);margin:1.4rem 0'>") || `<p class="desc">本行程未安排用餐點。</p>`;
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => {
+  const m = b.dataset.meal;
+  document.querySelectorAll(`.tabs button[data-meal="${m}"]`).forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(`[id^="meal-${m}-"]`).forEach(x => x.classList.toggle("on", x.id === `meal-${m}-${b.dataset.opt}`));
+});
+
+// ---------- 4. driver ----------
+// Optional side trip: the driver alone goes to buy take-away food while passengers keep walking.
+function errandHtml() {
+  const E = TRIP.errand;
+  if (!E) return "";
+  const P = E.stops, pts = P.map(p => p.map || p.name);
+  const loop = `https://www.google.com/maps/dir/?api=1&origin=${q(pts[0])}&destination=${q(pts[pts.length - 1])}` +
+    (pts.length > 2 ? `&waypoints=${pts.slice(1, -1).map(q).join("%7C")}` : "") + "&travelmode=driving";
+  const rows = P.map((p, i) => `<tr><td>${i + 1}</td><td><strong>${esc(p.name)}</strong><br><small style="color:var(--muted)">${esc(p.address || "")}</small></td>
+    <td>${p.arrive ? `<span class="t">${p.arrive}</span>` : "—"}</td><td>${p.depart ? `<span class="t">${p.depart}</span>` : "—"}</td><td>${rich(p.note || "")}</td></tr>`).join("");
+  const legs = E.legs.map((l, i) => `<div class="leg"><div class="leg-head"><b>採買路段 ${i + 1}：${esc(P[i].name)} ➔ ${esc(P[i + 1].name)}</b>
+      <span class="leg-time">${P[i].depart} 開車 → ${P[i + 1].arrive} 到達｜約 ${l.minutes} 分${l.km ? "・約 " + l.km + " 公里" : ""}</span></div>
+      <ol>${list(l.route)}</ol>
+      ${l.caution ? `<div class="tip">⚠️ ${rich(l.caution)}</div>` : ""}
+      ${l.parking ? `<div class="park"><strong>🅿️ 停車／購買：</strong>${rich(l.parking)}</div>` : ""}
+      <a class="btn" target="_blank" rel="noopener" href="${navUrl(pts[i], pts[i + 1])}">🧭 開啟此路段導航</a></div>`).join("");
+  return `<h3 class="sub">🧺 ${esc(E.title)}</h3>${E.intro ? `<p class="desc">${rich(E.intro)}</p>` : ""}
+    <div class="tw"><table><thead><tr><th>#</th><th>地點</th><th>到達</th><th>離開</th><th>備註</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p style="margin-top:.6rem"><a class="btn" target="_blank" rel="noopener" href="${loop}">🗺️ 採買全程路線（一次載入）</a></p>${legs}`;
+}
+{
+  const S = TRIP.stops, first = S[0], last = S[S.length - 1];
+  const drive = TRIP.legs.filter(l => l.mode !== "walk");
+  const totalMin = drive.reduce((a, l) => a + l.minutes, 0), totalKm = drive.reduce((a, l) => a + (l.km || 0), 0);
+  // whole-day link: every driving destination in order
+  const pts = [legNav(drive[0]).o, ...drive.map(l => legNav(l).d)];
+  const allUrl = `https://www.google.com/maps/dir/?api=1&origin=${q(pts[0])}&destination=${q(pts[pts.length - 1])}` +
+    (pts.length > 2 ? `&waypoints=${pts.slice(1, -1).map(q).join("%7C")}` : "") + "&travelmode=driving";
+
+  const rows = S.map((s, i) => {
+    const prev = TRIP.legs[i - 1];
+    const how = i === 0 ? "—" : prev.mode === "walk" ? "🚶 乘客步行（車不動）" : "🚐 開車";
+    return `<tr><td>${i + 1}</td><td><strong>${esc(s.name)}</strong><br><small style="color:var(--muted)">${esc(s.address || "")}</small></td>
+      <td>${s.arrive ? `<span class="t">${s.arrive}</span>` : "—"}</td><td>${s.depart ? `<span class="t">${s.depart}</span>` : "—"}</td>
+      <td>${s.arrive && s.depart ? dur(s.arrive, s.depart) + " 分" : "—"}</td><td>${how}</td><td>${rich(s.driver || "")}</td></tr>`;
+  }).join("");
+
+  let legs = "", n = 0;
+  TRIP.legs.forEach(l => {
+    const a = byId[l.from], b = byId[l.to];
+    if (l.mode === "walk") { legs += `<div class="walk">🚶 ${esc(a.name)} → ${esc(b.name)}：乘客步行約 ${l.minutes} 分，<strong>車輛不需移動</strong>${l.brief ? "（" + esc(l.brief) + "）" : ""}</div>`; return; }
+    n++; const nv = legNav(l);
+    legs += `<div class="leg"><div class="leg-head"><b>路段 ${n}：${esc(a.name)} ➔ ${esc(b.name)}</b>
+      <span class="leg-time">${l.depart} 開車 → ${l.arrive} 到達｜約 ${l.minutes} 分${l.km ? "・" + l.km + " 公里" : ""}</span></div>
+      ${l.before ? `<p style="font-size:.9rem;margin-bottom:.4rem">⏳ ${rich(l.before)}</p>` : ""}
+      <ol>${list(l.route)}</ol>
+      ${l.caution ? `<div class="tip">⚠️ ${rich(l.caution)}</div>` : ""}
+      ${l.parking ? `<div class="park"><strong>🅿️ 下客／停車：</strong>${rich(l.parking)}</div>` : ""}
+      <a class="btn" target="_blank" rel="noopener" href="${navUrl(nv.o, nv.d)}">🧭 開啟此路段導航</a>
+      <a class="btn alt" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q(nv.d)}">📍 只看目的地</a></div>`;
+  });
+
+  $("driver-body").innerHTML = `
+    <p class="desc">司機只需要看這一區。時間為預估，實際路線請以當下導航與路況為準。</p>
+    <div class="stats">
+      <div class="stat"><span>🚩 出發點</span><b>${esc(first.name)}</b><small>${esc(first.address || "")}｜${first.depart} 發車</small></div>
+      <div class="stat"><span>🏁 結束點</span><b>${esc(last.name)}</b><small>${esc(last.address || "")}｜約 ${last.arrive} 抵達</small></div>
+      <div class="stat"><span>🛣️ 全日開車</span><b>${drive.length} 段・約 ${totalMin} 分</b><small>${totalKm ? "約 " + Math.round(totalKm) + " 公里｜" : ""}中途停靠 ${S.length - 2} 點</small></div>
+    </div>
+    <a class="btn" target="_blank" rel="noopener" href="${allUrl}">🗺️ 全日路線（Google 地圖一次載入所有停靠點）</a>
+    <button class="btn alt" id="print-driver">🖨️ 列印司機頁</button>
+    ${TRIP.driver_notes && TRIP.driver_notes.length ? `<div class="notice" style="margin-top:1rem"><strong>📌 司機注意</strong><ul>${list(TRIP.driver_notes)}</ul></div>` : ""}
+    <h3 class="sub">各點到達／離開時刻表</h3>
+    <div class="tw"><table><thead><tr><th>#</th><th>地點</th><th>到達</th><th>離開</th><th>停留</th><th>怎麼到</th><th>下客／停車</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <h3 class="sub">點到點路線</h3>${legs}${errandHtml()}`;
+  $("print-driver").onclick = () => { document.body.classList.add("print-driver"); window.print(); };
+  window.onafterprint = () => document.body.classList.remove("print-driver");
+}
+$("foot").textContent = `${TRIP.title}｜資料整理日 ${TRIP.updated || ""}｜營業時間、菜單價格與路況可能變動，出發前請再確認。`;
+</script>
+</body>
+</html>
